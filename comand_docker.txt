@@ -1,0 +1,6 @@
+$ docker build -t test_image:latest -f Dockerfile_db .
+
+$ docker run -d -p 5433:5432 --name test_conteiner test_image:latest
+
+$ docker exec -it test_conteiner /bin/bash
+$ psql -U username -d database
